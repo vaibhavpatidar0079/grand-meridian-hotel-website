@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience luxury accommodation at The Grand Meridian. Book your perfect stay with world-class amenities, fine dining, and breathtaking views.">
+    <title>The Grand Meridian - Luxury Accommodation</title>
+
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1920&auto=format&fit=crop">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DC2626',
+                        secondary: '#F59E0B',
+                        accent: '#FCD34D'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+</head>
+<body class="bg-gray-50">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-16" id="navbar">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between min-h-[60px]">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-primary to-secondary rounded-full">
+                        <i class="ri-hotel-line text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-['Pacifico'] text-white nav-brand-text">The Grand Meridian</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-yellow-300 transition-colors nav-link">Home</a>
+                    <a href="#rooms" class="text-white hover:text-yellow-300 transition-colors nav-link">Rooms</a>
+                    <a href="#amenities" class="text-white hover:text-yellow-300 transition-colors nav-link">Amenities</a>
+                    <a href="#reviews" class="text-white hover:text-yellow-300 transition-colors nav-link">Reviews</a>
+                    <a href="#contact" class="text-white hover:text-yellow-300 transition-colors nav-link">Contact</a>
+                </div>
+
+                <button class="hidden md:block btn-gradient text-white px-6 py-2 rounded-button font-medium whitespace-nowrap !rounded-button">
+                    Book Now
+                </button>
+
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none mobile-menu-btn transition-colors duration-300" aria-label="Toggle Menu">
+                    <i class="ri-menu-3-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu uses scale-y-0 for vertical slide animation -->
+        <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-white/95 backdrop-blur-md shadow-lg border-t border-gray-100 transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none">
+            <div class="flex flex-col space-y-4 p-6 text-center">
+                <a href="#home" class="mobile-nav-link text-gray-800 hover:text-primary font-medium py-2">Home</a>
+                <a href="#rooms" class="mobile-nav-link text-gray-800 hover:text-primary font-medium py-2">Rooms</a>
+                <a href="#amenities" class="mobile-nav-link text-gray-800 hover:text-primary font-medium py-2">Amenities</a>
+                <a href="#reviews" class="mobile-nav-link text-gray-800 hover:text-primary font-medium py-2">Reviews</a>
+                <a href="#contact" class="mobile-nav-link text-gray-800 hover:text-primary font-medium py-2">Contact</a>
+                <button class="btn-gradient text-white px-6 py-3 rounded-button font-medium w-full mt-2 mobile-book-btn">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-slider">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1920&auto=format&fit=crop')"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1920&auto=format&fit=crop')"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1920&auto=format&fit=crop')"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1920&auto=format&fit=crop')"></div>
+        
+        <div class="hero-overlay pointer-events-none"></div>
+        <div class="relative z-10 h-full flex items-center justify-center">
+            <div class="text-center text-white max-w-4xl px-6">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Experience <span class="text-yellow-300">Luxury</span><br>
+                    Beyond Imagination
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-2xl mx-auto">
+                    Discover unparalleled comfort and elegance at The Grand Meridian, where every moment becomes a cherished memory
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
+                    <button class="btn-gradient text-white px-8 py-4 rounded-button font-semibold text-lg whitespace-nowrap !rounded-button hover:scale-105 transition-transform">
+                        Book Your Stay
+                    </button>
+                    <button class="glass-morphism text-white px-8 py-4 rounded-button font-semibold text-lg whitespace-nowrap border-2 border-white/30 hover:bg-white/20 hover:scale-105 transition-all !rounded-button">
+                        Virtual Tour
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="nav-arrow prev" aria-label="Previous Slide">
+            <i class="ri-arrow-left-line text-xl"></i>
+        </div>
+        <div class="nav-arrow next" aria-label="Next Slide">
+            <i class="ri-arrow-right-line text-xl"></i>
+        </div>
+        <div class="progress-dots">
+            <div class="progress-dot active" aria-label="Slide 1"></div>
+            <div class="progress-dot" aria-label="Slide 2"></div>
+            <div class="progress-dot" aria-label="Slide 3"></div>
+            <div class="progress-dot" aria-label="Slide 4"></div>
+        </div>
+    </section>
+
+    <section class="py-20 gradient-bg relative" id="booking-section">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="floating-card rounded-3xl p-8 md:p-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Reserve Your Perfect Stay</h2>
+                    <p class="text-lg text-gray-600">Choose your preferences and let us create an unforgettable experience</p>
+                </div>
+                <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="space-y-2">
+                        <label for="fullName" class="text-sm font-medium text-gray-700">Full Name</label>
+                        <input id="fullName" type="text" class="w-full px-4 py-3 rounded-lg custom-input text-gray-800" placeholder="Enter your full name">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="email" class="text-sm font-medium text-gray-700">Email Address</label>
+                        <input id="email" type="email" class="w-full px-4 py-3 rounded-lg custom-input text-gray-800" placeholder="your@email.com">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="phone" class="text-sm font-medium text-gray-700">Phone Number</label>
+                        <input id="phone" type="tel" class="w-full px-4 py-3 rounded-lg custom-input text-gray-800" placeholder="+1 (555) 123-4567">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="checkin" class="text-sm font-medium text-gray-700">Check-in Date</label>
+                        <input id="checkin" type="date" class="w-full px-4 py-3 rounded-lg custom-input text-gray-800" min="2025-01-01" value="2025-07-19">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="checkout" class="text-sm font-medium text-gray-700">Check-out Date</label>
+                        <input id="checkout" type="date" class="w-full px-4 py-3 rounded-lg custom-input text-gray-800" min="2025-01-01" value="2025-07-19">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-700" id="guests-label">Number of Guests</label>
+                        <div class="relative">
+                            <button type="button" aria-labelledby="guests-label" class="w-full px-4 py-3 rounded-lg custom-input text-gray-800 text-left flex items-center justify-between" id="guestSelector">
+                                <span>2 Adults, 0 Children</span>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-700" id="room-label">Room Type</label>
+                        <div class="relative">
+                            <button type="button" aria-labelledby="room-label" class="w-full px-4 py-3 rounded-lg custom-input text-gray-800 text-left flex items-center justify-between" id="roomTypeSelector">
+                                <span>Deluxe Suite</span>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-700">Bed Preference</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <div class="custom-radio"></div>
+                                <span class="text-gray-700">King Bed</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <div class="custom-radio"></div>
+                                <span class="text-gray-700">Twin Beds</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-700">Air Conditioning</label>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-gray-600">Non-AC</span>
+                            <div class="custom-switch" id="acSwitch" role="switch" aria-checked="false" aria-label="Toggle Air Conditioning">
+                                <div class="switch-handle"></div>
+                            </div>
+                            <span class="text-gray-600">AC</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 lg:col-span-3 space-y-2">
+                        <label for="specialReq" class="text-sm font-medium text-gray-700">Special Requests</label>
+                        <textarea id="specialReq" class="w-full px-4 py-3 rounded-lg custom-input text-gray-800 h-24" placeholder="Any special requirements or requests..."></textarea>
+                    </div>
+                    <div class="md:col-span-2 lg:col-span-3 text-center pt-6">
+                        <button type="submit" class="btn-gradient text-white px-12 py-4 rounded-button font-semibold text-lg whitespace-nowrap !rounded-button" id="bookingSubmitBtn">
+                            Reserve Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Luxury Room Categories</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Each room is thoughtfully designed to provide the ultimate comfort and sophistication for our distinguished guests</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="room-card rounded-2xl overflow-hidden">
+                    <div class="relative h-64" style="background-image: url('https://images.unsplash.com/photo-1743410976738-180b1f15f339?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center;">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Popular
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Deluxe Suite</h3>
+                        <p class="text-gray-600 mb-4">Spacious suite with panoramic city views, king bed, and premium amenities</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center"><i class="ri-user-line mr-1"></i> 2 Guests</span>
+                                <span class="flex items-center"><i class="ri-ruler-line mr-1"></i> 45 m²</span>
+                            </div>
+                            <div class="text-2xl font-bold text-primary">₹350</div>
+                        </div>
+                        <button class="w-full btn-gradient text-white py-3 rounded-button font-medium whitespace-nowrap !rounded-button book-room-btn" data-room-type="Deluxe Suite" data-room-price="299">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="room-card rounded-2xl overflow-hidden">
+                    <div class="relative h-64" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                        <div class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Premium
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Presidential Suite</h3>
+                        <p class="text-gray-600 mb-4">Ultimate luxury with separate living area, premium services, and exclusive amenities</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center"><i class="ri-user-line mr-1"></i> 4 Guests</span>
+                                <span class="flex items-center"><i class="ri-ruler-line mr-1"></i> 85 m²</span>
+                            </div>
+                            <div class="text-2xl font-bold text-primary">₹400</div>
+                        </div>
+                        <button class="w-full btn-gradient text-white py-3 rounded-button font-medium whitespace-nowrap !rounded-button book-room-btn" data-room-type="Presidential Suite" data-room-price="599">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="room-card rounded-2xl overflow-hidden">
+                    <div class="relative h-64" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Best Value
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Superior Room</h3>
+                        <p class="text-gray-600 mb-4">Comfortable accommodation with modern amenities and thoughtful design</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center"><i class="ri-user-line mr-1"></i> 2 Guests</span>
+                                <span class="flex items-center"><i class="ri-ruler-line mr-1"></i> 32 m²</span>
+                            </div>
+                            <div class="text-2xl font-bold text-primary">₹250</div>
+                        </div>
+                        <button class="w-full btn-gradient text-white py-3 rounded-button font-medium whitespace-nowrap !rounded-button book-room-btn" data-room-type="Superior Room" data-room-price="199">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="room-card rounded-2xl overflow-hidden">
+                    <div class="relative h-64" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Family Room</h3>
+                        <p class="text-gray-600 mb-4">Perfect for families with connecting rooms and child-friendly amenities</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center"><i class="ri-user-line mr-1"></i> 4 Guests</span>
+                                <span class="flex items-center"><i class="ri-ruler-line mr-1"></i> 55 m²</span>
+                            </div>
+                            <div class="text-2xl font-bold text-primary">₹380</div>
+                        </div>
+                        <button class="w-full btn-gradient text-white py-3 rounded-button font-medium whitespace-nowrap !rounded-button book-room-btn" data-room-type="Family Room" data-room-price="399">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="room-card rounded-2xl overflow-hidden">
+                    <div class="relative h-64" style="background-image: url('https://images.unsplash.com/photo-1595576508898-0ad5c879a061?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Executive Room</h3>
+                        <p class="text-gray-600 mb-4">Business-focused room with work area and executive lounge access</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center"><i class="ri-user-line mr-1"></i> 2 Guests</span>
+                                <span class="flex items-center"><i class="ri-ruler-line mr-1"></i> 38 m²</span>
+                            </div>
+                            <div class="text-2xl font-bold text-primary">₹360</div>
+                        </div>
+                        <button class="w-full btn-gradient text-white py-3 rounded-button font-medium whitespace-nowrap !rounded-button book-room-btn" data-room-type="Executive Room" data-room-price="349">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="room-card rounded-2xl overflow-hidden">
+                    <div class="relative h-64" style="background-image: url('https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=800&auto=format&fit=crop'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Honeymoon Suite</h3>
+                        <p class="text-gray-600 mb-4">Romantic suite with special amenities for couples and newlyweds</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                <span class="flex items-center"><i class="ri-user-line mr-1"></i> 2 Guests</span>
+                                <span class="flex items-center"><i class="ri-ruler-line mr-1"></i> 50 m²</span>
+                            </div>
+                            <div class="text-2xl font-bold text-primary">₹400</div>
+                        </div>
+                        <button class="w-full btn-gradient text-white py-3 rounded-button font-medium whitespace-nowrap !rounded-button book-room-btn" data-room-type="Honeymoon Suite" data-room-price="449">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">World-Class Amenities</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Experience unparalleled luxury with our comprehensive range of premium facilities and services</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="feature-icon rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full">
+                        <i class="ri-water-flash-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Infinity Pool</h3>
+                    <p class="text-sm text-gray-600">Rooftop infinity pool with panoramic city views</p>
+                </div>
+                <div class="feature-icon rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full">
+                        <i class="ri-restaurant-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Fine Dining</h3>
+                    <p class="text-sm text-gray-600">Award-winning restaurants with international cuisine</p>
+                </div>
+                <div class="feature-icon rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full">
+                        <i class="ri-heart-pulse-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Luxury Spa</h3>
+                    <p class="text-sm text-gray-600">Full-service spa with rejuvenating treatments</p>
+                </div>
+                <div class="feature-icon rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full">
+                        <i class="ri-run-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Fitness Center</h3>
+                    <p class="text-sm text-gray-600">State-of-the-art gym with personal trainers</p>
+                </div>
+                <div class="feature-icon rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full">
+                        <i class="ri-wifi-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Free WiFi</h3>
+                    <p class="text-sm text-gray-600">High-speed internet throughout the property</p>
+                </div>
+                <div class="feature-icon rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full">
+                        <i class="ri-car-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Valet Parking</h3>
+                    <p class="text-sm text-gray-600">Complimentary valet parking service</p>
+                </div>
+                <div class="feature-icon rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full">
+                        <i class="ri-service-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Concierge</h3>
+                    <p class="text-sm text-gray-600">24/7 concierge service for all your needs</p>
+                </div>
+                <div class="feature-icon rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-gradient-to-r from-primary to-secondary rounded-full">
+                        <i class="ri-briefcase-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Business Center</h3>
+                    <p class="text-sm text-gray-600">Fully equipped business facilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">What Our Guests Say</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Read authentic reviews from our valued guests who have experienced the magic of The Grand Meridian</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card rounded-2xl p-8 mx-4">
+                            <div class="flex items-center mb-6">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="Sarah Johnson" class="w-16 h-16 rounded-full object-cover mr-4" loading="lazy">
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">Sarah Johnson</h3>
+                                    <p class="text-gray-600 text-sm">Business Executive</p>
+                                    <div class="flex star-rating mt-1">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                "Absolutely exceptional experience! The staff went above and beyond to make our stay memorable. The presidential suite was breathtaking with panoramic city views. Every detail was perfect, from the welcome amenities to the personalized service."
+                            </p>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>Stayed in Presidential Suite</span>
+                                <span>December 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card rounded-2xl p-8 mx-4">
+                            <div class="flex items-center mb-6">
+                                <img src="https://images.unsplash.com/photo-1516575150278-77136aed6920?q=80&w=200&auto=format&fit=crop" alt="Michael & Emma Chen" class="w-16 h-16 rounded-full object-cover mr-4" loading="lazy">
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">Michael & Emma Chen</h3>
+                                    <p class="text-gray-600 text-sm">Honeymooners</p>
+                                    <div class="flex star-rating mt-1">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                "Our honeymoon at The Grand Meridian was pure magic! The honeymoon suite was incredibly romantic with rose petals, champagne, and the most stunning sunset views. The spa treatments were divine, and the infinity pool was the perfect place to relax."
+                            </p>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>Stayed in Honeymoon Suite</span>
+                                <span>November 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card rounded-2xl p-8 mx-4">
+                            <div class="flex items-center mb-6">
+                                <img src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=200&auto=format&fit=crop" alt="The Rodriguez Family" class="w-16 h-16 rounded-full object-cover mr-4" loading="lazy">
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">The Rodriguez Family</h3>
+                                    <p class="text-gray-600 text-sm">Family Vacation</p>
+                                    <div class="flex star-rating mt-1">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                "Perfect family getaway! The family room was spacious and comfortable for all four of us. The kids loved the pool area, and we appreciated the child-friendly amenities. The restaurant had excellent options for everyone."
+                            </p>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>Stayed in Family Room</span>
+                                <span>October 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card rounded-2xl p-8 mx-4">
+                            <div class="flex items-center mb-6">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" alt="David Thompson" class="w-16 h-16 rounded-full object-cover mr-4" loading="lazy">
+                                <div>
+                                    <h3 class="font-semibold text-gray-800">David Thompson</h3>
+                                    <p class="text-gray-600 text-sm">Corporate Traveler</p>
+                                    <div class="flex star-rating mt-1">
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                "As a frequent business traveler, I can confidently say The Grand Meridian sets the gold standard. The executive room had everything I needed for productivity, the business center was top-notch, and the concierge team handled all my meeting arrangements flawlessly."
+                            </p>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span>Stayed in Executive Room</span>
+                                <span>September 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="testimonial-nav-dot w-3 h-3 rounded-full bg-primary" aria-label="Show Testimonial 1"></button>
+                    <button class="testimonial-nav-dot w-3 h-3 rounded-full bg-gray-300" aria-label="Show Testimonial 2"></button>
+                    <button class="testimonial-nav-dot w-3 h-3 rounded-full bg-gray-300" aria-label="Show Testimonial 3"></button>
+                    <button class="testimonial-nav-dot w-3 h-3 rounded-full bg-gray-300" aria-label="Show Testimonial 4"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 parallax-section" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920&auto=format&fit=crop');">
+        <div class="bg-black bg-opacity-50 py-20">
+            <div class="max-w-4xl mx-auto px-6 text-center text-white">
+                <h2 class="text-4xl font-bold mb-6">Culinary Excellence Awaits</h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Indulge in world-class dining experiences crafted by our award-winning chefs using the finest ingredients
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="photo-gallery" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Photo Gallery</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Take a visual journey through our stunning property and luxurious accommodations</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-2xl h-64">
+                    <img src="https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hotel Lobby" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="ri-zoom-in-line text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl h-64">
+                    <img src="https://images.unsplash.com/photo-1591285713698-598d587de63e?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Swimming Pool" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="ri-zoom-in-line text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl h-64">
+                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop" alt="Spa Treatment Room" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="ri-zoom-in-line text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl h-64">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" alt="Fitness Center" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="ri-zoom-in-line text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl h-64">
+                    <img src="https://images.unsplash.com/photo-1571624436279-b272aff752b5?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Conference Room" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="ri-zoom-in-line text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl h-64">
+                    <img src="https://images.unsplash.com/photo-1705095605806-4b2936e90471?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rooftop Terrace" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="ri-zoom-in-line text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6">Ready for Your Perfect Stay?</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Join thousands of satisfied guests who have made The Grand Meridian their preferred choice for luxury accommodation. Book now and experience the difference.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-gradient text-white px-8 py-4 rounded-button font-semibold text-lg whitespace-nowrap !rounded-button">
+                    Book Your Stay Now
+                </button>
+                <button class="border-2 border-primary text-primary px-8 py-4 rounded-button font-semibold text-lg hover:bg-primary hover:text-white transition-all whitespace-nowrap !rounded-button" id="contactUsBtn">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-primary to-secondary rounded-full">
+                            <i class="ri-hotel-line text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-['Pacifico']">The Grand Meridian</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Experience luxury redefined at The Grand Meridian, where every moment becomes a cherished memory.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Facebook" class="w-12 h-12 flex items-center justify-center bg-primary rounded-full hover:bg-secondary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="w-12 h-12 flex items-center justify-center bg-primary rounded-full hover:bg-secondary transition-colors">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="w-12 h-12 flex items-center justify-center bg-primary rounded-full hover:bg-secondary transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="w-12 h-12 flex items-center justify-center bg-primary rounded-full hover:bg-secondary transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#rooms" class="text-gray-400 hover:text-white transition-colors">Rooms & Suites</a></li>
+                        <li><a href="#amenities" class="text-gray-400 hover:text-white transition-colors">Amenities</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-white transition-colors">Guest Reviews</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Special Offers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Room Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Concierge</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Spa & Wellness</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Business Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Airport Transfer</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Laundry Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <i class="ri-map-pin-line text-primary mt-1"></i>
+                            <span class="text-gray-400">123 Luxury Avenue, Downtown District, New York, NY 10001</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-phone-line text-primary"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-mail-line text-primary"></i>
+                            <span class="text-gray-400">reservations@grandmeridian.com</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="font-medium mb-3">Newsletter</h4>
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" aria-label="Email for newsletter" class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary">
+                            <button aria-label="Subscribe" class="bg-primary px-4 py-2 rounded-r-lg hover:bg-secondary transition-colors">
+                                <i class="ri-send-plane-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 The Grand Meridian. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="floating-book-btn" aria-label="Book Now">
+        <i class="ri-calendar-check-line mr-2"></i>
+        Book Now
+    </button>
+
+</body>
+</html>
