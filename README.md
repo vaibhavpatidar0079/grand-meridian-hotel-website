@@ -17,3 +17,22 @@ A premium, modern hotel landing page designed to showcase UI/UX skills, animatio
 - Vanilla JavaScript
 - Remix Icon
 - Google Fonts (Inter, Pacifico)
+
+## 📁 Project Structure
+index.html
+styles.css
+script.js
+
+
+## 🚀 How to Run
+1. Clone the repository  
+2. Open `index.html` in your browser  
+
+No build step required.
+
+## ⚠️ Disclaimer
+This is a **demo project** created for learning and portfolio purposes only.  
+All images are sourced from Unsplash and used for demonstration.
+
+## 👤 Author
+Vaibhav Patidar
